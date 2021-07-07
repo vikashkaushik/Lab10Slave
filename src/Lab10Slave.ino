@@ -1,8 +1,8 @@
 /*
  * Project Lab10Second
- * Description:
- * Author:
- * Date:
+ * Description: Slave
+ * Author: Vikash Kaushik
+ * Date: 7/7/21
  */
 SYSTEM_MODE(MANUAL);
 SYSTEM_THREAD(ENABLED);
@@ -19,6 +19,7 @@ void setup()
 }
 char x;
 char value; // button true or false
+// revieves from master and lights up based on char value
 void receiveEvent(int howMany)
 {
   x = Wire.read();
@@ -31,6 +32,7 @@ void receiveEvent(int howMany)
   }
   
 }
+// reads the button state and sends back to master
 void requestEvent() {
   
   value = digitalRead(D6);  // reads the button either true or false
